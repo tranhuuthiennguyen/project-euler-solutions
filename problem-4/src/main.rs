@@ -1,5 +1,3 @@
-use std::vec::Vec;
-
 fn get_digit(i: &u32, n: &u32) -> u32 {
     let div = 10_i32.pow(*i) as u32;
     (n%div)/(div/10)
