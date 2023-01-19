@@ -31,7 +31,7 @@ fn main() {
         sum+=i;
         let factors = prime_factor(sum);
         let mut divisors = 1;
-        for (k, v) in &factors {
+        for (_, v) in &factors {
             divisors*=v+1;
         }
         max = cmp::max(max, divisors);

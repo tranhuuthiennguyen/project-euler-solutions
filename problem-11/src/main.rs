@@ -1,5 +1,5 @@
 use std::{
-    io::{self, BufRead, Result}, 
+    io::{self, BufRead}, 
     fs::File, 
     path::Path,
     cmp
@@ -54,10 +54,10 @@ fn read_lines(filename: impl AsRef<Path>) -> Vec<Vec<u8>> {
     let br = io::BufReader::new(file);
     br.lines()
         .map(|line| line.unwrap()
-                                                .split_whitespace()
-                                                .into_iter()
-                                                .map(|c| c.parse::<u8>()
-                                                                .unwrap())
-                                                                .collect())
+                    .split_whitespace()
+                    .into_iter()
+                    .map(|c| c.parse::<u8>()
+                                    .unwrap())
+                                    .collect())
         .collect()
 }
